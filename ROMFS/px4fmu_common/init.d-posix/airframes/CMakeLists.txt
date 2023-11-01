@@ -79,6 +79,7 @@ px4_add_romfs_files(
 	4004_gz_standard_vtol
 	4005_gz_x500_vision
 	4006_gz_px4vision
+	# 4007_gz_iris_depth_camera
 
 	6011_gazebo-classic_typhoon_h480
 	6011_gazebo-classic_typhoon_h480.post
@@ -92,6 +93,8 @@ px4_add_romfs_files(
 	10019_gazebo-classic_omnicopter
 	10030_gazebo-classic_px4vision
 
+	# 10031_gz_iris
+
 	10040_sihsim_quadx
 	10041_sihsim_airplane
 	10042_sihsim_xvert
@@ -100,4 +103,6 @@ px4_add_romfs_files(
 	17002_flightgear_tf-g2
 
 	# [22000, 22999] Reserve for custom models
+	22000_gz_iris
+	22001_gz_iris_depth_camera
 )
