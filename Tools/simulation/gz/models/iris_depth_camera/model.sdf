@@ -5,7 +5,23 @@
       <uri>iris/model.sdf</uri>
     </include>
 
-    <include merge='true'>
+    <include>
+      <uri>model://rgl</uri>
+      <pose>0.1 0 0 0 0 0</pose>
+    </include>
+    <joint name="CameraJoint" type="revolute">
+      <child>RGLLidar::lidar_link</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- <include merge='true'>
       <uri>https://fuel.gazebosim.org/1.0/RudisLaboratories/models/OakD-Lite</uri>
       <pose>0.1 0 0 0 0 0</pose>
     </include>
@@ -13,7 +29,7 @@
       <parent>base_link</parent>
       <child>OakD-Lite/base_link</child>
       <pose relative_to="base_link">0.1 0 0 0 0 0</pose>
-    </joint>
+    </joint> -->
 
   </model>
 </sdf>
