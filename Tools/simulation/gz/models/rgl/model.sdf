@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version='1.9'>
+  <model name='RGLLidar'>
+    <pose>0 0 0 0 -0 0</pose>
+    <link name='lidar_link'>
+      <!-- Custom sensor with RGL plugin that simulates lidar -->
+      <sensor name="RGLsensor" type="custom">
+        <plugin filename="RGLServerPluginInstance" name="rgl::RGLServerPluginInstance">
+          <range>100</range>
+          <update_rate>10</update_rate>
+          <update_on_paused_sim>false</update_on_paused_sim>
+          <topic>rgl_lidar</topic>
+          <frame>RGLLidar</frame>
+          <pattern_preset>Alpha Prime</pattern_preset>
+        </plugin>
+      </sensor>
+      <inertial>
+        <inertia>
+          <ixx>0.14580000000000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.14580000000000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.125</izz>
+        </inertia>
+        <mass>0.001</mass>
+        <pose>0 0 0 0 -0 0</pose>
+      </inertial>
+      <collision name='lidar_collision'>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode/>
+          </friction>
+          <bounce/>
+          <contact/>
+        </surface>
+      </collision>
+      <visual name='lidar_visual'>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.7 0.7 0.7 1</diffuse>
+          <specular>1 1 1 1</specular>
+        </material>
+      </visual>
+      <pose>0 0 0 0 -0 0</pose>
+      <enable_wind>false</enable_wind>
+    </link>
+    <static>true</static>
+    <self_collide>false</self_collide>
+  </model>
+</sdf>
