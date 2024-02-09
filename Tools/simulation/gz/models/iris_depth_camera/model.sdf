@@ -3,33 +3,18 @@
   <model name='iris_depth_camera'>
     <include merge='true'>
       <uri>iris/model.sdf</uri>
+      <pose>0 0 1 0 0 0</pose>
     </include>
 
-    <include>
-      <uri>model://rgl</uri>
-      <pose>0.1 0 0 0 0 0</pose>
-    </include>
-    <joint name="CameraJoint" type="revolute">
-      <child>RGLLidar::lidar_link</child>
-      <parent>base_link</parent>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <upper>0</upper>
-          <lower>0</lower>
-        </limit>
-      </axis>
-    </joint>
-
-    <!-- <include merge='true'>
+    <include merge='true'>
       <uri>https://fuel.gazebosim.org/1.0/RudisLaboratories/models/OakD-Lite</uri>
-      <pose>0.1 0 0 0 0 0</pose>
+      <pose>0.1 0.1 1.0 0 0 0</pose>
     </include>
     <joint name="CameraJoint" type="fixed">
       <parent>base_link</parent>
       <child>OakD-Lite/base_link</child>
       <pose relative_to="base_link">0.1 0 0 0 0 0</pose>
-    </joint> -->
+    </joint>
 
   </model>
 </sdf>

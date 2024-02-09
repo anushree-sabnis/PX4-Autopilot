@@ -3,11 +3,12 @@
   <model name='iris_3d_lidar'>
     <include merge='true'>
       <uri>iris/model.sdf</uri>
+      <pose>0 0 1 0 0 0</pose>
     </include>
 
     <include>
       <uri>model://rgl</uri>
-      <pose>0.1 0 0 0 0 0</pose>
+      <pose>0.0 0 1.1 0 0 0</pose>
     </include>
     <joint name="LidarJoint" type="revolute">
       <child>RGLLidar::lidar_link</child>
@@ -20,5 +21,6 @@
         </limit>
       </axis>
     </joint>
+
   </model>
 </sdf>
