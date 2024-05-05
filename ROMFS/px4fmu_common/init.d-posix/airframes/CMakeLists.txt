@@ -106,4 +106,5 @@ px4_add_romfs_files(
 	22000_gz_iris
 	22001_gz_iris_depth_camera
 	22002_gz_iris_3d_lidar
+	22003_gz_cerberus_m100
 )
